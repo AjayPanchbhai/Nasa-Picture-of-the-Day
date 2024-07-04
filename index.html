@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA Picture of the Day</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container" style="background-color: #414141; color: #fff; padding: 15px; letter-spacing: .5px;">
+      <!-- <h1>NASA Picture of the Day</h1> -->
+
+      <section id="current-image-container">
+        <!-- Image and information will be displayed here -->
+      </section>
+
+    </div>
+
+    <h3>Search for the Picture of the Day</h3>
+
+    <form id="search-form">
+        <input type="date" id="search-input" required />
+        <button type="submit">Get Picture</button>
+      </form>
+
+    <h2>Search History</h2>
+
+    <ul id="search-history"></ul>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('search-input').setAttribute('max', today);
+        });
+    </script>
+  </body>
+</html>
